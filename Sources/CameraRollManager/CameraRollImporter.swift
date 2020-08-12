@@ -9,7 +9,7 @@
 import Foundation
 import Photos
 import AVFoundation
-import MetalCanvas
+import ProcessLogger_Swift
 
 public final class CameraRollImporter: NSObject {
     public var onProgress: ((_ progress: Double)->Void)?
@@ -54,19 +54,19 @@ public final class CameraRollImporter: NSObject {
             exportSession.exportAsynchronously(completionHandler: { [weak self] in
                 switch exportSession.status {
                 case .completed:
-                    MCDebug.successLog("importPHAsset: completed")
+                    ProcessLogger.successLog("importPHAsset: completed")
                     self?.onComplete?(true)
                 case .waiting:
-                    MCDebug.errorLog("importPHAsset: waiting")
+                    ProcessLogger.errorLog("importPHAsset: waiting")
                 case .unknown:
-                    MCDebug.errorLog("importPHAsset: unknown")
+                    ProcessLogger.errorLog("importPHAsset: unknown")
                 case .exporting:
-                    MCDebug.errorLog("importPHAsset: exporting")
+                    ProcessLogger.errorLog("importPHAsset: exporting")
                 case .cancelled:
-                    MCDebug.errorLog("importPHAsset: cancelled")
+                    ProcessLogger.errorLog("importPHAsset: cancelled")
                     self?.onComplete?(false)
                 case .failed:
-                    MCDebug.errorLog("importPHAsset: failed")
+                    ProcessLogger.errorLog("importPHAsset: failed")
                     self?.onComplete?(false)
                 @unknown default:
                     self?.onComplete?(false)
@@ -83,19 +83,19 @@ public final class CameraRollImporter: NSObject {
         exportSession.exportAsynchronously(completionHandler: { [weak self] in
             switch exportSession.status {
             case .completed:
-                MCDebug.successLog("importPHAsset: completed")
+                ProcessLogger.successLog("importPHAsset: completed")
                 self?.onComplete?(true)
             case .waiting:
-                MCDebug.errorLog("importPHAsset: waiting")
+                ProcessLogger.errorLog("importPHAsset: waiting")
             case .unknown:
-                MCDebug.errorLog("importPHAsset: unknown")
+                ProcessLogger.errorLog("importPHAsset: unknown")
             case .exporting:
-                MCDebug.errorLog("importPHAsset: exporting")
+                ProcessLogger.errorLog("importPHAsset: exporting")
             case .cancelled:
-                MCDebug.errorLog("importPHAsset: cancelled")
+                ProcessLogger.errorLog("importPHAsset: cancelled")
                 self?.onComplete?(false)
             case .failed:
-                MCDebug.errorLog("importPHAsset: failed")
+                ProcessLogger.errorLog("importPHAsset: failed")
                 self?.onComplete?(false)
             @unknown default:
                 self?.onComplete?(false)

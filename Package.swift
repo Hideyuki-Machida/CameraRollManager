@@ -14,12 +14,12 @@ let package = Package(
             targets: ["CameraRollManager"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Hideyuki-Machida/MetalCanvas", .branch("spm"))
+        .package(url: "https://github.com/Hideyuki-Machida/ProcessLogger.Swift", .branch("master")),
     ],
     targets: [
         .target(
             name: "CameraRollManager",
-            dependencies: ["MetalCanvas"]),
+            dependencies: ["ProcessLogger.Swift"]),
         .testTarget(
             name: "CameraRollManagerTests",
             dependencies: ["CameraRollManager"]),

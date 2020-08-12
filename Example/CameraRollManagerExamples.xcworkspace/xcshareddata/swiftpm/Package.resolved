@@ -2,11 +2,11 @@
   "object": {
     "pins": [
       {
-        "package": "MetalCanvas",
-        "repositoryURL": "https://github.com/Hideyuki-Machida/MetalCanvas",
+        "package": "ProcessLogger.Swift",
+        "repositoryURL": "https://github.com/Hideyuki-Machida/ProcessLogger.Swift",
         "state": {
-          "branch": "spm",
-          "revision": "7ee164605bdf6193cfec6531119c65235aa43148",
+          "branch": "master",
+          "revision": "624f37efdfca9f91a16f1e827f677ecf163153d0",
           "version": null
         }
       }
